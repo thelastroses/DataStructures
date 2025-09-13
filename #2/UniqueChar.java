@@ -45,20 +45,4 @@ public class UniqueChar {
 
         return count;
     }
-
-    public static int OccurrenceOfWord(String str, String word)
-    {
-        int count = 0;
-        //String[] theSentence = str.split(" ");
-
-        for(int i = 0; i  < str.length(); i++)
-        {
-            // if(theSentence[i].equals(word))
-            // {
-            //     count++;
-            // }
-        }
-
-        return count;
-    }
 }
