@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Benchmark {
     public static void main(String[] args) {
-        int[] arr = generateRandomUnique(7, 11000, 10000);
-        int lengthOfArray = generateRandomUnique(7, 11000, 10000).length;
+        int[] arr = generateRandomUnique(7, 110000, 100000);
+        int lengthOfArray = generateRandomUnique(7, 110000, 100000).length;
         
         long start = System.currentTimeMillis();
         bubbleSort(arr);
@@ -17,6 +17,14 @@ public class Benchmark {
         finish = System.currentTimeMillis();
         long selectionTimeElapsed = finish - start;
         System.out.println("Sorting a random array size of " + lengthOfArray + " took Selection Sort " + selectionTimeElapsed + "ms to complete.");
+    
+        start = System.currentTimeMillis();
+        insertionSort(arr);
+        finish = System.currentTimeMillis();
+        long insertionTimeElapsed = finish - start;
+        System.out.println("Sorting a random array size of " + lengthOfArray + " took Insertion Sort " + insertionTimeElapsed + "ms to complete.");
+    
+    
     }
 
     public static int[] bubbleSort(int[] unsortedArr)
@@ -66,6 +74,30 @@ public class Benchmark {
             int temp = result[i];
             result[i] = result[smallest];
             result[smallest] = temp;
+        }
+
+        return result;
+    }
+
+    public static int[] insertionSort(int[] unsortedArr)
+    {
+        int[] result = new int[unsortedArr.length];
+        for(int i = 0; i < unsortedArr.length;i++)
+        {
+            result[i] = unsortedArr[i];
+        }
+
+
+        for(int i = 1; i < result.length; i++)
+        {
+            int smallest = i;
+            while(smallest > 0 && result[smallest] < result[smallest-1])
+            {
+                int temp = result[smallest];
+                result[smallest] = result[smallest-1];
+                result[smallest-1] = temp;  
+                smallest--; 
+            }
         }
 
         return result;
