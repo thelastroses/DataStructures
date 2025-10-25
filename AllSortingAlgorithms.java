@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class AllSortingAlgorithms {
     public static void main(String[] args) {
-        int[] arr = generateRandomUnique(7, 110000, 1000);
+        int[] arr = generateRandomUnique(7, 110000, 100000);
         int lengthOfArray = arr.length;
 
         long start = System.currentTimeMillis();
@@ -267,13 +267,15 @@ public class AllSortingAlgorithms {
             {
                 mergedArr[mergePos] = arr[leftAmt];
                 leftAmt++;
+                mergePos++;
             }
             else
             {
                 mergedArr[mergePos] = arr[rightAmt];
                 rightAmt++;
+                mergePos++;
             }
-            mergePos++;
+            
         }
 
         while(leftAmt <= middle)
