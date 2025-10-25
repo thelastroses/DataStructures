@@ -74,9 +74,6 @@ public class QuickSort {
             return lowIndex -1;
         }
 
-
-
-
     public static int[] shellSort(int[] arr, int[] intervals)
     {       
         int[] result = new int[arr.length];
