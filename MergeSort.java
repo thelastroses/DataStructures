@@ -45,13 +45,14 @@ public class MergeSort {
             {
                 mergedArr[mergePos] = arr[leftAmt];
                 leftAmt++;
+                mergePos++;
             }
             else
             {
                 mergedArr[mergePos] = arr[rightAmt];
                 rightAmt++;
+                mergePos++;
             }
-            mergePos++;
         }
 
         while(leftAmt <= middle)
